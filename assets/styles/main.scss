@@ -1,0 +1,12 @@
+@import 'defaults/default';
+@import 'defaults/helpers';
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .2s;
+}
+
+.fade-enter,
+.fade-leave-active {
+    opacity: 0;
+}

@@ -1,0 +1,193 @@
+@import 'buefy/dist/buefy.css';
+
+.button {
+    height: auto;
+    padding: 4px 8px;
+    color: $black-text;
+    border-color: $grey-l;
+    font-size: 14px;
+    line-height: 1;
+
+    &:active {
+        border-color: $grey-l;
+        color: $black-text;
+    }
+
+    &:focus:not(:active) {
+        box-shadow: none;
+    }
+
+    &.is-large {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    &.is-text {
+        text-decoration: none;
+
+        &:hover {
+            color: $blue;
+            background-color: transparent;
+        }
+
+        &:focus {
+            box-shadow: none;
+            background-color: transparent;
+            color: #363636;
+        }
+
+        &._active {
+            background-color: $blue;
+            color: #fff;
+        }
+    }
+
+    &.is-info {
+        background-color: $blue;
+    }
+}
+
+.dropdown-item {
+    outline: none;
+}
+
+a.dropdown-item {
+
+    &:hover {
+        background-color: #f4f5f8;
+    }
+
+    &.is-active {
+        background-color: $grey-l;
+    }
+}
+
+.b-table .table {
+
+    td {
+        padding: 14px 8px;
+        border-bottom: none;
+    }
+
+    th {
+        padding: 14px 8px;
+
+        &.is-sortable {
+
+            &:hover {
+                border-color: $grey;
+            }
+        }
+
+        &.is-current-sort {
+            border-color: $grey;
+            color: $blue;
+
+            .icon {
+                color: $black-text;
+            }
+
+            &:hover {
+                border-color: $grey;
+            }
+        }
+    }
+
+    tr {
+        cursor: pointer;
+
+        &.is-selected {
+            background-color: rgba(75, 116, 255, .1);
+            color: $black_text;
+
+            .checkbox input + .check {
+                background: none;
+                border-color: $grey-l;
+
+                &:hover {
+                    border-color: $blue;
+                }
+            }
+
+            .checkbox input:checked + .check {
+                background: none;
+
+                &:hover {
+                    border-color: $blue;
+                }
+            }
+        }
+    }
+
+    thead th {
+        border-bottom: 1px solid $grey;
+    }
+
+    &.is-striped tbody tr:not(.is-selected):nth-child(even) {
+        background-color: #f4f5f8;
+    }
+}
+
+.b-checkbox.checkbox {
+    outline: none;
+
+    input[type=checkbox] + .check {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        border: 1px solid $grey-l;
+        border-radius: 1px;
+
+        &:before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background-color: $blue;
+            transform: scale(0);
+            transition: transform .2s ease;
+        }
+    }
+
+    input[type=checkbox]:checked + .check {
+        background-image: none;
+        background-color: transparent;
+        border-color: $grey-l;
+
+        &:before {
+            transform: scale(1);
+        }
+    }
+
+    input[type=checkbox]:focus + .check,
+    input[type=checkbox]:focus:checked + .check {
+        box-shadow: none;
+    }
+
+    &:hover {
+
+        input[type=checkbox] + .check {
+            border-color: $blue;
+        }
+    }
+}
+
+.pagination {
+
+    .pagination-previous,
+    .pagination-next {
+        padding: 3px;
+        border-color: $grey-l;
+    }
+
+    &:focus {
+        border-color: $grey-l;
+        box-shadow: none;
+    }
+}
+
+.pagination-previous[disabled],
+.pagination-next[disabled] {
+    background-color: transparent;
+}

@@ -1,0 +1,22 @@
+/* Breakpoints: From xs to sm, from sm to md, from md to lg, after that simple desktop */
+$breakpoints: (
+    xs: 0,
+    sm: 768px,
+    md: 992px,
+    lg: 1280px
+);
+
+/* Colors */
+$brown: #6c4438;
+$green: #3b9a50;
+$red: #e45a5a;
+$yellow: #e8b555;
+$blue: #4b74ff;
+$grey: #ededed;
+$grey-l: #c6cbd4;
+$black-text: #333;
+
+/* Font */
+$font-family: 'Source Sans Pro', sans-serif;
+
+$container-w: 1140px;
