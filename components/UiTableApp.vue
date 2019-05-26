@@ -166,7 +166,6 @@
                                 :field="col.field"
                                 :label="col.label"
                                 :width="col.width"
-                                :visible="activeColumns.includes(col.field)"
                                 :sortable="index === 0">
                     {{ props.row[col.field] }}
                 </b-table-column>
@@ -265,7 +264,7 @@
 
         computed: {
             orderedColumns() {
-                return this.columns.slice().sort((a, b) => {
+                let cols = this.columns.slice().sort((a, b) => {
                     if (a.field === this.group) {
                         a.sortable = true;
                         return -1;
@@ -276,6 +275,8 @@
                     }
                     return 0;
                 });
+
+                return cols.filter(col => this.activeColumns.includes(col.field));
             },
 
             currentCount() {
@@ -290,6 +291,12 @@
 
         watch: {
             orderedColumns() {
+                this.$nextTick(() => {
+                    this.$refs.table.initSort();
+                });
+            },
+
+            activeColumns() {
                 this.$nextTick(() => {
                     this.$refs.table.initSort();
                 });
