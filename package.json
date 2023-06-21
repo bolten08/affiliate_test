@@ -19,7 +19,7 @@
         "element-ui": "^2.7.2",
         "lodash": "^4.17.11",
         "normalize.css": "^8.0.1",
-        "nuxt": "^2.7.1"
+        "nuxt": "^3.4.3"
     },
     "devDependencies": {
         "@nuxtjs/style-resources": "^0.1.2",
